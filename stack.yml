@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  web:
+    image: flask-swarm-demo:1.0
+    ports:
+      - "8080:5000" # navigateur -> http://localhost:8080
+    deploy:
+      replicas: 3
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        order: start-first
+        delay: 5s
+      rollback_config:
+        parallelism: 1
+        order: start-first
+        delay: 5s
+    secrets:
+      - app_secret
+
+secrets:
+  app_secret:
+    external: true
