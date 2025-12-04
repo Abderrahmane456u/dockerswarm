@@ -100,10 +100,4 @@ services:
 secrets:
   app_secret:
     external: true
-
-
----
-
-Si tu veux, je peux te faire **une version encore plus courte et synthétique** qui tient sur **une page GitHub**, avec uniquement les commandes à exécuter et la structure des fichiers.  
-
-Veux‑tu que je fasse ça ?
+------
